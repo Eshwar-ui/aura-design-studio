@@ -1,0 +1,125 @@
+/* ============================================================
+   AURA DESIGN STUDIO - RTL Overrides
+   ============================================================ */
+
+html[dir="rtl"] {
+  direction: rtl;
+  unicode-bidi: embed;
+}
+
+html[dir="rtl"] body {
+  text-align: right;
+}
+
+/* Float reversals */
+html[dir="rtl"] .float-right {
+  float: left !important;
+}
+html[dir="rtl"] .float-left {
+  float: right !important;
+}
+
+/* Dashboard Sidebar Placement Swap */
+html[dir="rtl"] .dashboard-layout {
+  flex-direction: row-reverse !important;
+}
+
+html[dir="rtl"] .dashboard-sidebar {
+  border-left-width: 1px !important;
+  border-right-width: 0 !important;
+}
+
+/* Actual dashboard templates use #sidebar and Tailwind utilities directly. */
+html[dir="rtl"] body:has(.sidebar-toggle) #sidebar {
+  border-left-width: 1px !important;
+  border-right-width: 0 !important;
+}
+
+html[dir="rtl"] body:has(.sidebar-toggle) .text-left {
+  text-align: right !important;
+}
+
+html[dir="rtl"] body:has(.sidebar-toggle) .text-right {
+  text-align: left !important;
+}
+
+html[dir="rtl"] body:has(.sidebar-toggle) .mr-1 {
+  margin-right: 0 !important;
+  margin-left: 0.25rem !important;
+}
+
+html[dir="rtl"] body:has(.sidebar-toggle) .ml-3 {
+  margin-left: 0 !important;
+  margin-right: 0.75rem !important;
+}
+
+html[dir="rtl"] body:has(.sidebar-toggle) .pl-4 {
+  padding-left: 0 !important;
+  padding-right: 1rem !important;
+}
+
+html[dir="rtl"] body:has(.sidebar-toggle) .border-l {
+  border-left-width: 0 !important;
+  border-right-width: 1px !important;
+}
+
+html[dir="rtl"] body:has(.sidebar-toggle) [class~="left-[-25px]"] {
+  left: auto !important;
+  right: -25px !important;
+}
+
+html[dir="rtl"] body:has(.sidebar-toggle) td.text-right.flex {
+  justify-content: flex-start !important;
+}
+
+@media (max-width: 1023px) {
+  html[dir="rtl"] .dashboard-sidebar {
+    transform: translateX(100%);
+  }
+  html[dir="rtl"] .dashboard-sidebar.open {
+    transform: translateX(0);
+  }
+
+  html[dir="rtl"] body:has(.sidebar-toggle) #sidebar {
+    right: 0 !important;
+    left: auto !important;
+    --tw-translate-x: 100% !important;
+    translate: 100% 0 !important;
+  }
+
+  html[dir="rtl"] body:has(.sidebar-toggle) #sidebar.open {
+    --tw-translate-x: 0 !important;
+    translate: 0 0 !important;
+  }
+}
+
+/* Form floating labels RTL fix */
+html[dir="rtl"] .form-label {
+  left: auto !important;
+  right: var(--space-3) !important;
+}
+
+/* Margin and padding logic fixes (where logical utilities aren't used) */
+html[dir="rtl"] .ml-auto {
+  margin-right: auto !important;
+  margin-left: 0 !important;
+}
+html[dir="rtl"] .mr-auto {
+  margin-left: auto !important;
+  margin-right: 0 !important;
+}
+
+/* Icon rotation in RTL */
+html[dir="rtl"] .fa-arrow-right,
+html[dir="rtl"] .fa-chevron-right {
+  transform: scaleX(-1);
+  display: inline-block;
+}
+
+/* Scroll reveals origin adjustment */
+html[dir="rtl"] [data-reveal="fade-left"] {
+  transform: translateX(-32px);
+}
+html[dir="rtl"] [data-reveal="fade-right"] {
+  transform: translateX(32px);
+}

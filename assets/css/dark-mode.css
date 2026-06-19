@@ -1,0 +1,94 @@
+/* ============================================================
+   AURA DESIGN STUDIO - Dark Mode Overrides
+   ============================================================ */
+
+.dark {
+  /* Obsidian & Soft Gold Color Token Overrides */
+  --color-bg:              #0F0F12; /* Rich Obsidian */
+  --color-bg-secondary:    #16161B;
+  --color-bg-tertiary:     #1E1E25;
+  --color-surface:         #16161B; /* Carbon Surface */
+  --color-border:          rgba(250, 248, 245, 0.08);
+  --color-border-strong:   rgba(250, 248, 245, 0.16);
+
+  --color-text-primary:    #FAF8F5; /* Warm White */
+  --color-text-secondary:  #A5A5A9;
+  --color-text-muted:      #6E6E75;
+
+  --color-primary:         #D9C4A9; /* Light Gold for high contrast */
+  --color-primary-light:   #EBE0D2;
+  --color-primary-dark:    #BCA588;
+  --color-primary-tint:    rgba(217, 196, 169, 0.08);
+
+  /* Shadow Enhancements for Dark Mode */
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.40);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.50);
+  --shadow-lg: 0 10px 24px rgba(0, 0, 0, 0.60);
+}
+
+/* Scrollbar adjustment for dark mode */
+.dark ::-webkit-scrollbar-track {
+  background: #0F0F12;
+}
+.dark ::-webkit-scrollbar-thumb {
+  background: #BCA588;
+}
+
+/* Image overlay filters for dark mode */
+.dark img {
+  filter: brightness(0.9) contrast(1.02);
+}
+
+/* Direct tailwind custom adjustments for dark mode */
+.dark .bg-white {
+  background-color: var(--color-surface) !important;
+}
+.dark .bg-gray-50, 
+.dark .bg-gray-100 {
+  background-color: var(--color-bg-secondary) !important;
+}
+.dark .text-gray-900 {
+  color: var(--color-text-primary) !important;
+}
+.dark .text-gray-800 {
+  color: var(--color-text-primary) !important;
+}
+.dark .text-gray-700 {
+  color: var(--color-text-secondary) !important;
+}
+.dark .text-gray-600 {
+  color: var(--color-text-secondary) !important;
+}
+.dark .text-gray-500 {
+  color: var(--color-text-muted) !important;
+}
+.dark .border-gray-100,
+.dark .border-gray-200 {
+  border-color: var(--color-border) !important;
+}
+
+/* Preloader Dark Mode Override */
+.dark .preloader {
+  background: var(--color-bg);
+}
+.dark .preloader__brand {
+  color: var(--color-primary);
+}
+
+/* Form controls in dark mode */
+.dark input,
+.dark textarea,
+.dark select {
+  background-color: var(--color-bg) !important;
+  border-color: var(--color-border) !important;
+  color: var(--color-text-primary) !important;
+}
+.dark input:focus,
+.dark textarea:focus,
+.dark select:focus {
+  border-color: var(--color-primary) !important;
+}
+.dark input::placeholder,
+.dark textarea::placeholder {
+  color: var(--color-text-muted) !important;
+}

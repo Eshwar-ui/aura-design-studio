@@ -1,0 +1,11 @@
+# OS / editor cruft
+.DS_Store
+Thumbs.db
+desktop.ini
+*.log
+
+# Dependency dirs (none currently, future-proofing)
+node_modules/
+
+# Internal notes (not for public deploy)
+latest-system-instructions.md
