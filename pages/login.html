@@ -51,24 +51,34 @@
   <!-- Tabler Icons -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
 </head>
-<body class="bg-surface dark:bg-dark-bg text-gray-900 dark:text-gray-100 font-sans antialiased min-h-screen flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
+<body class="auth-compact bg-surface dark:bg-dark-bg text-gray-900 dark:text-gray-100 font-sans antialiased min-h-screen flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
   
   <a href="#main-content" class="skip-link">Skip to main content</a>
 
-  <main id="main-content" class="w-full max-w-[1000px] bg-white dark:bg-dark-surface rounded-brand-xl overflow-hidden border border-black/10 dark:border-white/10 shadow-brand-lg grid md:grid-cols-12" role="main">
+  <main id="main-content" class="auth-card w-full max-w-[1000px] bg-white dark:bg-dark-surface rounded-brand-xl overflow-hidden border border-black/10 dark:border-white/10 shadow-brand-lg grid md:grid-cols-12" role="main">
     
-    <!-- Left Column: Elegant Visual -->
+    <!-- Left Column: Elegant Visual with full-height editorial overlay -->
     <div class="hidden md:block md:col-span-6 overflow-hidden relative">
-      <img src="../assets/images/hero/hero-main.webp" alt="Minimal luxury interior design concept rendering" class="w-full h-full object-cover" loading="eager" width="500" height="600">
-      <div class="absolute inset-0 bg-primary/30 dark:bg-black/50"></div>
-      <div class="absolute bottom-8 left-8 text-white z-10 max-w-[32ch] text-left">
-        <h2 class="text-xl font-bold font-serif mb-2 text-accent">Aura Client Portal</h2>
-        <p class="text-xs text-gray-300 leading-relaxed">View spatial blueprint layout updates, material selections, and timeline milestones in real time.</p>
+      <img src="../assets/images/hero/hero-main.webp" alt="Minimal luxury interior design concept rendering" class="absolute inset-0 w-full h-full object-cover" loading="eager" width="500" height="600">
+      <div class="absolute inset-0 bg-primary/70 dark:bg-black/50"></div>
+      <div class="relative z-10 h-full flex flex-col justify-between gap-8 p-8 text-white">
+        <!-- Top: brand signature -->
+        <span class="signature text-3xl text-accent">The Aura portal</span>
+        <!-- Middle: statement -->
+        <blockquote class="font-display text-2xl leading-snug max-w-[22ch]">
+          Every material, milestone, and drawing — gathered in one calm place.
+        </blockquote>
+        <!-- Bottom: what's inside -->
+        <ul class="flex flex-col gap-3 text-sm text-gray-300">
+          <li class="flex items-center gap-3"><span class="text-accent font-bold">—</span> Approve mood boards &amp; swatches</li>
+          <li class="flex items-center gap-3"><span class="text-accent font-bold">—</span> Track build milestones in real time</li>
+          <li class="flex items-center gap-3"><span class="text-accent font-bold">—</span> Message your design team directly</li>
+        </ul>
       </div>
     </div>
 
     <!-- Right Column: Login Form -->
-    <div class="col-span-12 md:col-span-6 p-8 md:p-12 flex flex-col justify-center gap-6" data-reveal="fade-left">
+    <div class="auth-panel col-span-12 md:col-span-6 p-8 md:p-12 flex flex-col justify-center gap-6" data-reveal="fade-left">
       <!-- Header -->
       <div class="text-left flex flex-col gap-2">
         <!-- Logo -->

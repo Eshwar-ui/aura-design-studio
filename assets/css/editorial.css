@@ -291,6 +291,31 @@ h2 .italic {
 ::selection { background: rgba(200, 169, 110, 0.28); color: var(--ink); }
 .dark ::selection { color: var(--paper); }
 
+/* ── Responsive: dynamic viewport height for full-height heroes ──────────────
+   Replaces 100vh with 100dvh so mobile browser chrome doesn't cause the
+   iOS "viewport jump". Same selector as the original utility, loaded later,
+   so it wins; falls back to the original 100vh if dvh is unsupported. */
+.min-h-\[calc\(100vh-72px\)\] { min-height: calc(100dvh - 72px); }
+
+/* ── Auth pages — compact, single-screen layout ─────────────────────────────
+   Tightens the stacked rhythm and caps the card to the viewport on desktop so
+   the page never scrolls; the form panel scrolls internally only if a short
+   screen demands it. On mobile the image hides and the form flows naturally. */
+body.auth-compact { padding-block: 24px; }
+body.auth-compact .signature { margin-top: 0 !important; font-size: 1.5rem; line-height: 1; }
+
+.auth-panel { gap: 16px !important; padding: 28px !important; }
+.auth-panel form > * + * { margin-top: 14px !important; }   /* overrides space-y-5 */
+.auth-panel .form-field { margin-bottom: 0; }
+.auth-panel .form-label-top { margin-bottom: 4px; }
+
+@media (min-width: 768px) {
+  .auth-panel { padding: 32px 40px !important; gap: 18px !important; }
+  body.auth-compact { min-height: 100dvh; }
+  .auth-card { max-height: calc(100dvh - 48px); }
+  .auth-panel { overflow-y: auto; scrollbar-width: thin; }
+}
+
 /* ── 8. Guards ───────────────────────────────────────────────────────────── */
 @media (prefers-reduced-motion: reduce) {
   [data-reveal] { filter: none !important; }
