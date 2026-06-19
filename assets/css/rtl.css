@@ -123,3 +123,35 @@ html[dir="rtl"] [data-reveal="fade-left"] {
 html[dir="rtl"] [data-reveal="fade-right"] {
   transform: translateX(32px);
 }
+
+/* ============================================================
+   Editorial + marketing/auth RTL fixes (beyond the dashboard)
+   ============================================================ */
+
+/* Text alignment flips on all pages (not just dashboards) */
+html[dir="rtl"] .text-left  { text-align: right !important; }
+html[dir="rtl"] .text-right { text-align: left  !important; }
+
+/* Directional inline-icon spacing (nav carets, stat arrows, buttons) */
+html[dir="rtl"] .ml-1 { margin-left: 0 !important; margin-right: 0.25rem !important; }
+html[dir="rtl"] .mr-1 { margin-right: 0 !important; margin-left: 0.25rem !important; }
+html[dir="rtl"] .ml-2 { margin-left: 0 !important; margin-right: 0.5rem  !important; }
+html[dir="rtl"] .ml-4 { margin-left: 0 !important; margin-right: 1rem   !important; }
+
+/* Auth: the password visibility toggle moves to the start (left) edge in RTL,
+   and the input's reserved toggle padding swaps to the left.
+   (.form-input itself already uses logical padding-inline, so it auto-mirrors.) */
+html[dir="rtl"] .password-visibility-toggle { right: auto !important; left: 0.75rem !important; }
+html[dir="rtl"] .pr-12 { padding-right: 1rem !important; padding-left: 3rem !important; }
+
+/* Materials marquee keeps its left-to-right flow (Latin material names) */
+html[dir="rtl"] .marquee-track { direction: ltr; }
+/* (.link-arrow glyph flip + hover is handled in editorial.css) */
+
+/* ============================================================
+   Editorial component RTL flips (moved from editorial.css)
+   ============================================================ */
+[dir="rtl"] .rule-grow { transform-origin: right center; }
+[dir="rtl"] .navbar-link::after { transform-origin: right center; }
+[dir="rtl"] .link-arrow span { transform: scaleX(-1); }
+[dir="rtl"] .link-arrow:hover span { transform: scaleX(-1) translateX(4px); }

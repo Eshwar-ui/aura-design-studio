@@ -1,94 +1,131 @@
 /* ============================================================
    AURA DESIGN STUDIO - Dark Mode Overrides
+   (warm obsidian scheme; merged from former custom.css + editorial.css)
    ============================================================ */
 
-.dark {
-  /* Obsidian & Soft Gold Color Token Overrides */
-  --color-bg:              #0F0F12; /* Rich Obsidian */
-  --color-bg-secondary:    #16161B;
-  --color-bg-tertiary:     #1E1E25;
-  --color-surface:         #16161B; /* Carbon Surface */
-  --color-border:          rgba(250, 248, 245, 0.08);
-  --color-border-strong:   rgba(250, 248, 245, 0.16);
 
-  --color-text-primary:    #FAF8F5; /* Warm White */
-  --color-text-secondary:  #A5A5A9;
-  --color-text-muted:      #6E6E75;
-
-  --color-primary:         #D9C4A9; /* Light Gold for high contrast */
-  --color-primary-light:   #EBE0D2;
-  --color-primary-dark:    #BCA588;
-  --color-primary-tint:    rgba(217, 196, 169, 0.08);
-
-  /* Shadow Enhancements for Dark Mode */
-  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.40);
-  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.50);
-  --shadow-lg: 0 10px 24px rgba(0, 0, 0, 0.60);
+.dark #navbar {
+  background-color: #0A0805 !important;
 }
 
-/* Scrollbar adjustment for dark mode */
-.dark ::-webkit-scrollbar-track {
-  background: #0F0F12;
+.dark #mobile-menu {
+  background-color: #0A0805 !important;
 }
-.dark ::-webkit-scrollbar-thumb {
-  background: #BCA588;
-}
-
-/* Image overlay filters for dark mode */
-.dark img {
-  filter: brightness(0.9) contrast(1.02);
-}
-
-/* Direct tailwind custom adjustments for dark mode */
-.dark .bg-white {
-  background-color: var(--color-surface) !important;
-}
-.dark .bg-gray-50, 
-.dark .bg-gray-100 {
-  background-color: var(--color-bg-secondary) !important;
-}
-.dark .text-gray-900 {
-  color: var(--color-text-primary) !important;
-}
-.dark .text-gray-800 {
-  color: var(--color-text-primary) !important;
-}
-.dark .text-gray-700 {
-  color: var(--color-text-secondary) !important;
-}
-.dark .text-gray-600 {
-  color: var(--color-text-secondary) !important;
-}
-.dark .text-gray-500 {
-  color: var(--color-text-muted) !important;
-}
-.dark .border-gray-100,
-.dark .border-gray-200 {
-  border-color: var(--color-border) !important;
-}
-
-/* Preloader Dark Mode Override */
 .dark .preloader {
-  background: var(--color-bg);
+  background: #0A0805; /* dark: near-black bg */
 }
-.dark .preloader__brand {
-  color: var(--color-primary);
+.dark .preloader__spinner {
+  border-color: rgba(250, 248, 245, 0.08);
+}
+.dark .hotspot-card {
+  background: #110E09;
+  border-color: rgba(250, 248, 245, 0.08);
+  color: #FAF8F5;
+}
+.dark .back-to-top {
+  background: #110E09;
+  border-color: rgba(250, 248, 245, 0.08);
+  color: #FAF8F5;
 }
 
-/* Form controls in dark mode */
+/* Theme parity refinements */
+.dark .bg-surface,
+.dark .bg-white {
+  background-color: #110E09 !important;
+}
+
+.dark .bg-surface-secondary,
+.dark .bg-gray-50,
+.dark .bg-gray-100 {
+  background-color: #0A0805 !important;
+}
+
+.dark .border-black\/10,
+.dark .border-gray-200,
+.dark .border-gray-100 {
+  border-color: rgba(250, 248, 245, 0.10) !important;
+}
+
+.dark .text-gray-900,
+.dark .text-gray-800 {
+  color: #FAF8F5 !important;
+}
+
+.dark .text-gray-700,
+.dark .text-gray-600 {
+  color: #D1D5DB !important;
+}
+
+.dark .text-gray-500,
+.dark .text-gray-400 {
+  color: #9CA3AF !important;
+}
+
+.dark .form-input,
 .dark input,
 .dark textarea,
 .dark select {
-  background-color: var(--color-bg) !important;
-  border-color: var(--color-border) !important;
-  color: var(--color-text-primary) !important;
+  background-color: #0A0805;
+  border-color: rgba(250, 248, 245, 0.18);
+  color: #FAF8F5;
 }
-.dark input:focus,
-.dark textarea:focus,
-.dark select:focus {
-  border-color: var(--color-primary) !important;
-}
+
+.dark .form-input::placeholder,
 .dark input::placeholder,
 .dark textarea::placeholder {
-  color: var(--color-text-muted) !important;
+  color: #8F96A3;
 }
+
+.dark .bg-emerald-100 {
+  background-color: rgba(16, 185, 129, 0.16) !important;
+}
+
+.dark .text-emerald-800,
+.dark .text-emerald-600 {
+  color: #34D399 !important;
+}
+
+.dark .bg-amber-100 {
+  background-color: rgba(200, 169, 110, 0.18) !important;
+}
+
+.dark .text-amber-800,
+.dark .text-amber-500 {
+  color: #D8BC7E !important;
+}
+
+.dark .bg-rose-100 {
+  background-color: rgba(244, 63, 94, 0.16) !important;
+}
+
+.dark .text-rose-800 {
+  color: #FDA4AF !important;
+}
+
+.dark .bg-green-100 {
+  background-color: rgba(34, 197, 94, 0.16) !important;
+}
+
+.dark .text-green-800,
+.dark .text-green-700 {
+  color: #86EFAC !important;
+}
+
+.dark .bg-accent\/10 {
+  background-color: rgba(200, 169, 110, 0.14) !important;
+}
+
+.dark .bg-accent\/20 {
+  background-color: rgba(200, 169, 110, 0.22) !important;
+}
+.dark {
+  --hairline: rgba(250, 248, 245, 0.12);
+}
+.dark body::before {
+  opacity: 0.07;
+  mix-blend-mode: screen;
+}
+.dark .shadow-warm {
+  box-shadow: 0 30px 60px -28px rgba(0, 0, 0, 0.7);
+}
+.dark ::selection { color: var(--paper); }
