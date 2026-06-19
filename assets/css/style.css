@@ -975,5 +975,12 @@ body.auth-compact { padding-block: 20px; }
   body::before { opacity: 0.04; } /* lighter grain on small screens */
 }
 
-/* Responsive safety: hero headline must never overflow (forced <br> lines in RTL/tablet) */
-.section-hero h1, #hero h1 { overflow-wrap: anywhere; max-width: 100%; }
+/* Hero overflow safety.
+   Grid/flex children default to min-width:auto, so the wide hero image and the
+   long headline force the track wider than the viewport. In LTR the overflow
+   lands on the image side; in RTL the copy column sits there and the headline
+   gets clipped at the right edge. Allowing children to shrink fixes both. */
+#hero, .section-hero { max-width: 100%; }
+#hero .grid > *, .section-hero .grid > * { min-width: 0; }
+#hero h1, .section-hero h1 { max-width: 100%; overflow-wrap: anywhere; text-wrap: pretty; }
+#hero p, .section-hero p { max-width: 100%; overflow-wrap: anywhere; }
